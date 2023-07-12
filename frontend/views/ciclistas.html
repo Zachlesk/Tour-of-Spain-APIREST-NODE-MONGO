@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facturartemis</title>
+    <link rel="stylesheet" href="../Assets/css/categorias.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="./main.js" type="module"></script>
+  </head>
+  <body>
+    <header id="main-header" class="main-header">
+      <section class="navbar-facturartemis">
+        <img src="../Assets/img/Logo_FA.png" class="logo" alt="Logo" />
+        <nav class="navbar-general">
+          <nav class="navbar bg-body-tertiary fixed-top">
+            <div class="container-fluid">
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div
+                class="offcanvas offcanvas-start"
+                tabindex="-1"
+                id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel"
+              >
+                <div class="offcanvas-header">
+                  <img
+                    src="../Assets/img/Logo_FA.png"
+                    class="logo2"
+                    alt="Logo"
+                  />
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a class="nav-link" href="../index.html">
+                        <i class="bi bi-house-door-fill"></i> Home</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="categorias.html">
+                        <i class="bi bi-tag-fill"></i> Categorias
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="productos.html">
+                        <i class="bi bi-bag-fill"></i> Productos
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="clientes.html">
+                        <i class="bi bi-people"></i> Clientes
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="empleados.html">
+                        <i class="bi bi-person-vcard-fill"></i> Empleados
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </nav>
+      </section>
+    </header>
+    <!-- Button trigger modal -->
+    <div class="button-modal container-fluid">
+
+      <i class="plus bi bi-plus-circle fs-1 text-white" data-bs-toggle="modal"data-bs-target="#addCategorias" type="button" ></i>
+
+      </button>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="addCategorias"
+      tabindex="-1"
+      aria-labelledby="addCategoriasLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="addCategoriasLabel">
+              Agregar Categoria
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="myFormCategoria">
+              <div class="modal-body">
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label
+                      for="inputCategoriaNombre"
+                      class="form-label"
+                      title="Nombre"
+                    >
+                      Nombre Categoria
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputCategoriaNombre"
+                      placeholder="Ingrese el Nombre de la Categoria"
+                      name="CategoriaNombre"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label
+                      for="inputDescripcion"
+                      class="form-label"
+                      title="Descripcion"
+                    >
+                      Descripcion
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputDescripcion"
+                      placeholder="Ingresa la Descripcion"
+                      name="Descripcion"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <label for="inputImagen" class="form-label" title="Imagen">
+                      Imagen
+                    </label>
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="inputImagen"
+                      placeholder="Ingresa La imagen de la categoria"
+                      name="Imagen"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <input
+                  type="reset"
+                  class="btn btn-danger text-dark"
+                  data-bs-dismiss="modal"
+                  value="Cerrar"
+                />
+                <input
+                  type="submit"
+                  class="btn btn-warning"
+                  data-accion="enviar"
+                  value="Enviar Registro"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="categories container overflow-auto">
+      <table class="table table-striped">
+        <thead class="thead">
+          <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>DESCRIPCION</th>
+            <th>IMAGEN</th>
+            <th>EDITAR</th>
+            <th>ELIMINAR</th>
+          </tr>
+        </thead>
+        <tbody id="categories" class="listado-estudiantes"></tbody>
+      </table>
+    </div>
+    <img src="../Assets/img/imagen.png" class="imagen" />
+  </body>
+</html>

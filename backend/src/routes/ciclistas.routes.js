@@ -1,12 +1,12 @@
 import express from "express";
-import { get, getOne, post, deleteOne, update } from "../controllers/ciclistas.controllers.js";
+import { obtenerCiclista, obtenerCiclistaID, agregarCiclista, borrarCiclista, actualizarCiclistas } from "../controllers/ciclistas.controllers.js";
 
 const router = express.Router();
 
-router.get("/", get);
-router.get("/:id", getOne);
-router.post("/", post);
-router.delete("/:id", deleteOne);
-router.patch("/:id", update);
+router.get("/all", obtenerCiclista);
+router.get("/getone/:id", obtenerCiclistaID);
+router.post("/add", agregarCiclista);
+router.delete("/remove/:id", borrarCiclista);
+router.patch("/update/:id", actualizarCiclistas);
 
 export default router;
