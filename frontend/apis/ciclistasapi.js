@@ -1,7 +1,7 @@
 const url = "http://localhost:5000/api/ciclistas/all";
-const urlUno = "http://localhost:5000/api/ciclistas/one";
+const urlUno = "http://localhost:5000/api/ciclistas/getone";
 const urlNuevo = "http://localhost:5000/api/ciclistas/add";
-const urlBorrar = "http://localhost:5000/api/ciclistas/remove";
+const urlBorrar = "http://localhost:5000/api/ciclistas/delete";
 const urlActualizar = "http://localhost:5000/api/ciclistas/update";
 
 
@@ -15,9 +15,9 @@ export const getCiclistas = async () => {
     }
 };
 
-export const getCiclista = async (ciclistaID) => {
+export const getCiclista = async (id) => {
     try {
-        const response = await fetch(`${urlUno}/${ciclistaID}`);
+        const response = await fetch(`${urlUno}/${id}`);
         const result = await response.json();
         return result;
     } catch (error) {
@@ -42,9 +42,9 @@ export const postCiclistas = async (ciclistas) => {
 };
 
 
-export const deleteCiclistas = async (ciclistaID) => {
+export const deleteCiclistas = async (id) => {
   try {
-        await fetch(`${urlBorrar}/${ciclistaID}`,{
+        await fetch(`${urlBorrar}/${id}`,{
             method:'DELETE',
             headers: {
                 "Content-Type":"application/json",
@@ -57,9 +57,9 @@ export const deleteCiclistas = async (ciclistaID) => {
 };
 
 
-export const putCiclistas = async (data,ciclistaID)=>{
+export const putCiclistas = async (data,id)=>{
     try {
-            await fetch(`${urlActualizar}/${ciclistaID}`,{
+            await fetch(`${urlActualizar}/${id}`,{
             method: "PUT",
             body: JSON.stringify(data),
             headers:{
