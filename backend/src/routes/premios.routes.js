@@ -1,12 +1,17 @@
-import express from "express";
-import { get, getOne, post, deleteOne, update } from "../controllers/premios.controllers.js";
+import { Router } from 'express';
+import {getPremios, getPremio, postPremios, deletePremios, putPremios} from '../controllers/premios.controllers.js';
 
-const router = express.Router();
+const router = Router();
 
-router.get("/", get);
-router.get("/:id", getOne);
-router.post("/", post);
-router.delete("/:id", deleteOne);
-router.patch("/:id", update);
+router.get("/all", getPremios);
 
-export default router;
+router.get("/getone/:id", getPremio);
+
+router.post("/add", postPremios);
+
+router.delete("/delete/:id", deletePremios);
+
+router.put("/update/:id", putPremios);
+
+
+export default router; 

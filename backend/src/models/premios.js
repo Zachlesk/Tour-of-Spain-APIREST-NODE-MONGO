@@ -1,26 +1,38 @@
 import mongoose from "mongoose";
 
-const mySchema = mongoose.Schema(
-
-{
-    puesto: {
+const premiosSchema = mongoose.Schema({
+    clasificacion: {
         type: String,
-        required: true,
+        require: true,
         trim: true
     },
-    cantidadEuros: {
-        type: Number,
-        required: true,
+    descripcion: {
+        type: String,
+        require: true,
+        trim: true
+    },
+    primerlugar:{
+        type: String,
+        require: true,
+        trim: true
+    },
+    segundolugar:{
+        type: String,
+        require: true,
+        trim: true
+    },
+    tercerlugar:{
+        type: String,
+        require: true,
         trim: true
     }
-}, 
-
+},
 {
     timestamps: true
 }
-
 );
 
-const Premio = mongoose.model("premios", mySchema);
+const Premios = mongoose.model("premios", premiosSchema);
 
-export default Premio;
+export default Premios;
+

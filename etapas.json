@@ -1,0 +1,62 @@
+[
+    {
+        "etapa": "1",
+        "fecha": "26 de Agosto de 2023",
+        "lugar": "Barcelona",
+        "kilometros": "14,6 km"
+    },
+    {
+        "etapa": "2",
+        "fecha": "27 de Agosto de 2023",
+        "lugar": "Mataró - Barcelona",
+        "kilometros": "181,3 km"
+    },
+    {
+        "etapa": "3",
+        "fecha": "28 de Agosto de 2023",
+        "lugar": "Súria - Arinsal Andorra",
+        "kilometros": "158,5 km"
+    },
+    {
+        "etapa": "4",
+        "fecha": "29 de Agosto de 2023",
+        "lugar": "Andorra La Vella - Taragona",
+        "kilometros": "183,4 km"
+    },
+    {
+        "etapa": "5",
+        "fecha": "30 de Agosto de 2023",
+        "lugar": "Morella - Burriana",
+        "kilometros": "185,7 km"
+    },
+    {
+        "etapa": "6",
+        "fecha": "31 de Agosto de 2023",
+        "lugar": "Vall D'Uixó - Javalambre",
+        "kilometros": "181,3 km"
+    },
+    {
+        "etapa": "7",
+        "fecha": "1 de Septiembre de 2023",
+        "lugar": "Utiel - Oliva",
+        "kilometros": "188,8 km"
+    },
+    {
+        "etapa": "8",
+        "fecha": "2 de Septiembre de 2023",
+        "lugar": "Dénia - Xorret de Catí",
+        "kilometros": "164,8 km"
+    },
+    {
+        "etapa": "9",
+        "fecha": "3 de Septiembre de 2023",
+        "lugar": "Cartagena - Caravaca de la Cruz",
+        "kilometros": "180,9 km"
+    },
+    {
+        "etapa": "10",
+        "fecha": "4 de Septiembre de 2023",
+        "lugar": "Valladolid - Valladolid",
+        "kilometros": "25 km"
+    }
+]

@@ -1,0 +1,48 @@
+[
+    {
+        "clasificación": "Clasificación general",
+        "descripcion": "Premio por ser campeón de el tour de España",
+        "primerlugar": "150.000 €",
+        "segundolugar": "57.985 €",
+        "tercerlugar": "30.000 €"
+
+    },
+    {
+        "clasificación": "Clasificación por etapas",
+        "descripcion": "Premio por ser lider de etapas",
+        "primerlugar": "11.000 €",
+        "segundolugar": "5.500 €",
+        "tercerlugar": "2.700 €"
+
+    },
+    {
+        "clasificación": "Clasificación por equipos",
+        "descripcion": "Premio por la clasificación de equipos dependiendo del rendimiento",
+        "primerlugar": "12.500  €",
+        "segundolugar": "7.500 €",
+        "tercerlugar": "5.500 €"
+
+    },
+    {
+        "clasificación": "Clasificación por puntos",
+        "descripcion": "Premio por la clasificación de tabla de puntos",
+        "primerlugar": "11.000  €",
+        "segundolugar": "5.000 €",
+        "tercerlugar": "2.000 €"
+    },
+    {
+        "clasificación": "Clasificación de la montaña",
+        "descripcion": "Mejor rendimiento en la montaña",
+        "primerlugar": "13.000 €",
+        "segundolugar": "6.600 €",
+        "tercerlugar": "3.500 €"
+    },
+    {
+        "clasificación": "Mejor joven",
+        "descripcion": "Mejor desempeño de ciclista joven en el tour",
+        "primerlugar": "11.000  €",
+        "segundolugar": "5.000 €",
+        "tercerlugar": "2.000 €"
+    }
+    
+]

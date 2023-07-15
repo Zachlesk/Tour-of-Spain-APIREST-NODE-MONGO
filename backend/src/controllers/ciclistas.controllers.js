@@ -1,63 +1,56 @@
-import Ciclista from "../models/ciclista.js";
+import Ciclistas from "../models/Ciclistas.js";
 
-const obtenerCiclista = async (req, res) => {
-    const ciclistas = await Ciclista.find();
+const getCiclistas = async (req, res)=>{
+    const ciclistas = await Ciclistas.find();
     res.json(ciclistas);
-}
+};
 
-const obtenerCiclistaID = async (req, res) => {
-    const ciclista = await Ciclista.find({_id:req.params.id});
-    res.json(ciclista);
-}
-
-const agregarCiclista = async (req, res) => {
-    const ciclista = new Ciclista(req.body);
+const getCiclista = async (req, res)=>{
     try {
-        const nuevoCiclista = await ciclista.save();
-        res.json(nuevoCiclista);
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-const borrarCiclista = async (req, res) => {
-    try {
-        await Ciclista.deleteOne({_id: req.params.id});
-        res.json(204).send()
-    } catch (error) {
-        res.status(400);
-        res.send(error.message);
-    }
-}
-
-const actualizarCiclistas = async (req, res) => {
-    try {
-        const ciclista = await Ciclista.findOne({_id:req.params.id});
-
-        if(req.body.nombre) {
-            actualizar.nombre = req.body.nombre;
-        }
-        if (req.body.carrerasCorridas) {
-            actualizar.carrerasCorridas = req.body.carrerasCorridas;
-        }
-        if(req.body.edad){
-            actualizar.edad = req.body.edad;
-        }
-        if(req.body.paisNatal){
-            actualizar.paisNatal = req.body.paisNatal;
-        }
-        if(req.body.dni){
-            actualizar.dni = req.body.dni;
-        }
-
-        await ciclista.save();
+        const ciclista = await Ciclistas.findOne({_id:req.params.id});
         res.send(ciclista);
     } catch (error) {
-        res.status(400);
-        res.send({error: "No existe"});
+        res.status(404);
+        res.send({error: "Este ciclista no existe"});
     }
 }
 
-export {
-    obtenerCiclista, obtenerCiclistaID, agregarCiclista, borrarCiclista, actualizarCiclistas
-}
+const postCiclistas = async (req, res)=>{
+    const ciclistas = new Ciclistas(req.body);
+    try {
+        const nuevoCiclista = await ciclistas.save();
+        res.json(nuevoCiclista);
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+const deleteCiclistas = async (req, res)=>{
+    try {
+        await Ciclistas.deleteOne({_id:req.params.id});
+        res.status(204).send();
+    } catch (error) {
+        res.status(404);
+        res.send({error: "Este ciclista no existe"});
+    }
+};
+
+const putCiclistas = async (req, res)=>{
+    try {
+        const ciclista = await 
+        Ciclistas.findOneAndUpdate(
+            {_id:req.params.id},
+            req.body,
+            {new:true});
+
+        await ciclista.save();
+        res.json(ciclista);
+        res.send(ciclista);
+    } catch (error) {
+        res.status(404);
+        res.send({error: "Ciclista no existe"});
+    }
+};
+
+
+export {getCiclistas, getCiclista, postCiclistas, deleteCiclistas, putCiclistas};

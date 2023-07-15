@@ -1,58 +1,55 @@
-import Premio from "../models/premios.js";
+import Premios from "../models/Premios.js";
 
-const get = async (req, res) => {
-    const dbInfo = await Premio.find();
-    res.json(dbInfo);
-}
+const getPremios = async (req, res)=>{
+    const premios = await Premios.find();
+    res.json(premios);
+};
 
-const getOne = async (req, res) => {
-    const dbUnicoRegistro = await Premio.find({_id:req.params.id});
-    res.json(dbUnicoRegistro);
-}
-
-const post = async (req, res) => {
-    const nuevo = new Premio(req.body);
+const getPremio = async (req, res)=>{
     try {
-        const nuevoRegistro = await nuevo.save();
-        res.json(nuevoRegistro);
+        const premio = await Premios.findOne({_id:req.params.id});
+        res.send(premio);
     } catch (error) {
-        console.error(error);
+        res.status(404);
+        res.send({error: "Este premio no existe"});
     }
-}
+};
 
-const deleteOne = async (req, res) => {
+const postPremios = async (req, res)=>{
+    const premios = new Premios(req.body);
     try {
-        await Premio.deleteOne({_id: req.params.id});
-        res.json(204).send()
+        const nuevosPremios = await premios.save();
+        res.json(nuevosPremios);
     } catch (error) {
-        res.status(400);
-        res.send(error.message);
+        console.log(error);
     }
-}
+};
 
-const update = async (req, res) => {
+const deletePremios = async (req, res)=>{
     try {
-        const actualizar = await Premio.findOne({_id:req.params.id});
-
-        if(req.body.puesto) {
-            actualizar.puesto = req.body.puesto;
-        }
-        if (req.body.cantidadEuros) {
-            actualizar.cantidadEuros = req.body.cantidadEuros;
-        }
-
-        await actualizar.save();
-        res.send(actualizar);
+        await Premios.deleteOne({_id:req.params.id});
+        res.status(204).send();
     } catch (error) {
-        res.status(400);
-        res.send(error.message);
+        res.status(404);
+        res.send({error: "Este premio no existe"});
     }
-}
+};
 
-export {
-    get,
-    getOne,
-    post,
-    update,
-    deleteOne
-}
+
+const putPremios = async (req, res)=>{
+    try {
+        const premios = await Premios.findOneAndUpdate({_id:req.params.id},
+            {_id:req.params.id},
+            req.body,
+            {new:true});
+        await premios.save();
+        res.json(premios);
+        res.send(premios);
+    } catch (error) {
+        res.status(404);
+        res.send({error: "Este premio no existe"});
+    }
+};
+
+
+export {getPremios, getPremio, postPremios, deletePremios, putPremios};

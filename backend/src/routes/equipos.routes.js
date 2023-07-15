@@ -1,12 +1,17 @@
-import express from "express";
-import { get, getOne, post, deleteOne, update } from "../controllers/equipos.controllers.js";
+import { Router } from 'express';
+import { getEquipos, getEquipo, postEquipos, deleteEquipos, putEquipos} from '../controllers/equipos.controllers.js';
 
-const router = express.Router();
+const router = Router();
 
-router.get("/", get);
-router.get("/:id", getOne);
-router.post("/", post);
-router.delete("/:id", deleteOne);
-router.patch("/:id", update);
+router.get("/all", getEquipos);
+
+router.get("/getone/:id", getEquipo);
+
+router.post("/add", postEquipos);
+
+router.delete("/delete/:id", deleteEquipos);
+
+router.put("/update/:id", putEquipos);
+
 
 export default router;

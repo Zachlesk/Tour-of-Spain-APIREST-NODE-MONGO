@@ -1,10 +1,11 @@
-const url = "http://localhost:5000/ciclistas/all";
-const urlNuevo = "http://localhost:5000/ciclistas/add";
-const urlBorrar = "http://localhost:5000/ciclistas/remove";
-const urlActualizar = "http://localhost:5000/ciclistas/update";
+const url = "http://localhost:5000/api/ciclistas/all";
+const urlUno = "http://localhost:5000/api/ciclistas/one";
+const urlNuevo = "http://localhost:5000/api/ciclistas/add";
+const urlBorrar = "http://localhost:5000/api/ciclistas/remove";
+const urlActualizar = "http://localhost:5000/api/ciclistas/update";
 
 
-export const obtenerCiclistas = async () => {
+export const getCiclistas = async () => {
     try {
         const ciclistas = await fetch(url);
         const datosCiclistas = await ciclistas.json();
@@ -14,13 +15,25 @@ export const obtenerCiclistas = async () => {
     }
 };
 
-
-export const nuevoCiclista = async (ciclistas) => {
+export const getCiclista = async (ciclistaID) => {
     try {
-        await fetch(urlNuevo,{
+        const response = await fetch(`${urlUno}/${ciclistaID}`);
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+
+export const postCiclistas = async (ciclistas) => {
+    try {
+        await fetch(`${urlNuevo}/`,{
             method: "POST",
             body:JSON.stringify(ciclistas),
-            headers:{'Content-Type':'application/json'}
+            headers:{
+                'Content-Type':'application/json'
+            },
         });
         window.location.href ="../views/ciclistas.html"
     } catch (error) {
@@ -29,29 +42,32 @@ export const nuevoCiclista = async (ciclistas) => {
 };
 
 
-export const deleteCiclista = async (ciclistaID) => {
+export const deleteCiclistas = async (ciclistaID) => {
   try {
         await fetch(`${urlBorrar}/${ciclistaID}`,{
-            method:'DELETE'
+            method:'DELETE',
+            headers: {
+                "Content-Type":"application/json",
+            }
         })
         window.location.href ="../views/ciclistas.html"
     } catch (error) {
-        console.log(error);
+        console.log(error, "Wrong");
     }
 };
 
 
-export const editarCiclista = async (datos) => {
+export const putCiclistas = async (data,ciclistaID)=>{
     try {
-        await fetch(`${urlActualizar}/${datos._id}`, {
-            method: "PATCH",
-            headers:{'Content-Type':'application/json'},
-            body:JSON.stringify(datos)
-        }).then(response => response.json()).then(updatedDatos => {
-            console.log('Datos actualizados:', updatedDatos);
+            await fetch(`${urlActualizar}/${ciclistaID}`,{
+            method: "PUT",
+            body: JSON.stringify(data),
+            headers:{
+                'Content-Type':"application/json",
+            },
         });
-        window.location.href ="index.html"
+        window.location.href = "../views/ciclistas.html"
     } catch (error) {
-      console.error('Error al actualizar los datos:', error);
+        console.log(error);
     }
 };

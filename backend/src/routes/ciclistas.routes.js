@@ -1,12 +1,17 @@
-import express from "express";
-import { obtenerCiclista, obtenerCiclistaID, agregarCiclista, borrarCiclista, actualizarCiclistas } from "../controllers/ciclistas.controllers.js";
+import { Router } from 'express';
+import { getCiclistas, getCiclista, postCiclistas, deleteCiclistas, putCiclistas } from '../controllers/ciclistas.controllers.js';
 
-const router = express.Router();
+const router = Router();
 
-router.get("/all", obtenerCiclista);
-router.get("/getone/:id", obtenerCiclistaID);
-router.post("/add", agregarCiclista);
-router.delete("/remove/:id", borrarCiclista);
-router.patch("/update/:id", actualizarCiclistas);
+router.get("/all", getCiclistas);
+
+router.get("/getone/:id", getCiclista);
+
+router.post("/add", postCiclistas);
+
+router.delete("/delete/:id", deleteCiclistas);
+
+router.put("/update/:id", putCiclistas);
+
 
 export default router;

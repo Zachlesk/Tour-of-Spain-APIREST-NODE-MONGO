@@ -1,0 +1,72 @@
+[
+    {
+        "nombre": "Arkéa Samsic",
+        "código": "ARK",
+        "pais": "Francia",
+        "disciplina": "Ciclismo en ruta",
+        "categoria": "UCI WorldTeam"
+    },
+    {
+        "nombre": "Movistar Team",
+        "código": "MOV",
+        "pais": "España",
+        "disciplina": "Ciclismo en ruta",
+        "categoria": "UCI WorldTeam"
+    },
+    {
+        "nombre": "Israel-Premier Tech",
+        "código": "IPT",
+        "pais": "Israel",
+        "disciplina": "Ciclismo en ruta",
+        "categoria": "UCI ProTeam"
+    },
+    {
+        "nombre": "INEOS Grenadiers",
+        "código": "IGD",
+        "pais": "Reino Unido",
+        "disciplina": "Ciclismo en ruta",
+        "categoria": "UCI WorldTeam"
+    },
+    {
+        "nombre": "UAE Team Emirates",
+        "código": "UAD",
+        "pais": "Emiratos Árabes Unidos",
+        "disciplina": "Ciclismo en ruta",
+        "categoria": "UCI ProTeam"
+    },
+    {
+        "nombre": "Team Bahrain Victorious",
+        "código": "TBV",
+        "pais": "Baréin",
+        "disciplina": "Ciclismo en ruta",
+        "categoria": "UCI WorldTeam"
+    },
+    {
+        "nombre": "EF Education-EasyPost",
+        "código": "EFE",
+        "pais": "Estados Unidos",
+        "disciplina": "Ciclismo en ruta",
+        "categoria": "UCI WorldTeam"
+    },
+    {
+        "nombre": "Soudal Quick-Step",
+        "código": "SOQ",
+        "pais": "Bélgica",
+        "disciplina": "Ciclismo en ruta",
+        "categoria": "UCI WorldTeam"
+    },
+    {
+        "nombre": "Jumbo-Visma",
+        "código": "TJV",
+        "pais": "Países Bajos",
+        "disciplina": "Ciclismo en ruta",
+        "categoria": "UCI WorldTeam"
+    },
+    {
+        "nombre": "Astana Qazaqstan Team",
+        "código": "AST",
+        "pais": "Kazajistán",
+        "disciplina": "Ciclismo en ruta",
+        "categoria": "UCI WorldTeam"
+    }
+]

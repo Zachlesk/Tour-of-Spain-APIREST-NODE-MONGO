@@ -1,63 +1,56 @@
-import Equipo from "../models/equipo.js";
+import Equipos from "../models/Equipos.js";
 
-const get = async (req, res) => {
-    const dbInfo = await Equipo.find();
-    res.json(dbInfo);
-}
+const getEquipos = async (req, res)=>{
+    const equipos = await Equipos.find();
+    res.json(equipos);
+};
 
-const getOne = async (req, res) => {
-    const dbUnicoRegistro = await Equipo.find({_id:req.params.id});
-    res.json(dbUnicoRegistro);
-}
-
-const post = async (req, res) => {
-    const nuevo = new Equipo(req.body);
+const getEquipo = async (req, res)=>{
     try {
-        const nuevoRegistro = await nuevo.save();
-        res.json(nuevoRegistro);
+        const equipo = await Equipos.findOne({_id:req.params.id});
+        res.send(equipo);
     } catch (error) {
-        console.error(error);
+        res.status(404);
+        res.send({error: "Este equipo no existe"});
     }
 }
 
-const deleteOne = async (req, res) => {
+const postEquipos = async (req, res)=>{
+    const equipo = new Equipos(req.body);
     try {
-        await Equipo.deleteOne({_id: req.params.id});
-        res.json(204).send()
+        const nuevoEquipo = await equipo.save();
+        res.json(nuevoEquipo);
     } catch (error) {
-        res.status(400);
-        res.send(error.message);
+        console.log(error);
     }
-}
+};
 
-const update = async (req, res) => {
+const deleteEquipos = async (req, res)=>{
     try {
-        const actualizar = await Equipo.findOne({_id:req.params.id});
-        if (req.body.nombre) {
-            actualizar.nombre = req.body.nombre;
-        }
-        if(req.body.entrenador) {
-            actualizar.entrenador = req.body.entrenador;
-        }
-        if(req.body.pais){
-            actualizar.pais = req.body.pais;
-        }
-        if(req.body.patrocinador){
-            actualizar.patrocinador = req.body.patrocinador;
-        }
-
-        await actualizar.save();
-        res.send(actualizar);
+        await Equipos.deleteOne({_id:req.params.id});
+        res.status(204).send();
     } catch (error) {
-        res.status(400);
-        res.send(error.message);
+        res.status(404);
+        res.send({error: "Este equipo no existe"});
     }
-}
+};
 
-export {
-    get,
-    getOne,
-    post,
-    update,
-    deleteOne
-}
+
+const putEquipos = async (req, res)=>{
+    try {
+        const equipo = await Equipos.findOneAndUpdate(
+            {_id:req.params.id},
+            req.body,
+            {new:true});
+
+        await equipo.save();
+        res.json(equipo);
+        res.send(equipo);
+    } catch (error) {
+        res.status(404);
+        res.send({error: "Este equipo no existe"});
+    }
+};
+
+
+export { getEquipos, getEquipo, postEquipos, deleteEquipos, putEquipos };

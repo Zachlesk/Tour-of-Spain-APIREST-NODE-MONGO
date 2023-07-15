@@ -1,0 +1,84 @@
+
+[
+    {
+        "nombre": "Nairo Alexander Quintana Rojas",
+        "apodo": "Nairoman",
+        "edad": "33",
+        "nacionalidad": "Colombiano",
+        "equipo": "Arkéa Samsic",
+        "disciplina": "Ruta",
+        "tipo": "Escalador"
+    },
+    {
+        "nombre": "Egan Arley Bernal Gómez",
+        "apodo":"Escarabajo de oro",
+        "nacionalidad": "Colombiano",
+        "equipo":"Sky/INEOS",
+        "disciplina": "Ruta",
+        "tipo": "Escalador"
+    },
+    {
+        "nombre": "Steven Kruijswijk",
+        "apodo":"Kruijswijk",
+        "nacionalidad": "Neerlandesa",
+        "equipo":"Team Jumbo-Visma",
+        "disciplina": "Ruta",
+        "tipo": "Escalador"
+    },
+    {
+        "nombre": "Gino Bartali",
+        "apodo":"Il Ginettaccio",
+        "nacionalidad": "Italiano",
+        "equipo":"Bartali",
+        "disciplina": "Carretera",
+        "tipo": "Carretera"
+    },
+    {
+        "nombre": "Eddy Merckx",
+        "apodo":"El Caníbal",
+        "nacionalidad": "Belga",
+        "equipo":"C&A",
+        "disciplina": "Carretera y pista",
+        "tipo": "Todos los terrenos"
+    },
+    {
+        "nombre": "Richie Porte",
+        "apodo":"Porte",
+        "nacionalidad": "Australiano",
+        "equipo":"INEOS Grenadiers",
+        "disciplina": "Ruta",
+        "tipo": "Escalador"
+    },
+    {
+        "nombre": "Rigoberto Urán",
+        "apodo":"El toro de Urrao",
+        "nacionalidad": "Colombiano",
+        "equipo":"Cannondale/EF",
+        "disciplina": "Ruta",
+        "tipo": "Escalador y contrarrelojista"
+    },
+    {
+        "nombre": "Mikel Landa Meana",
+        "apodo":"Landa",
+        "nacionalidad": "Español",
+        "equipo":"Team Bahrain Victorious",
+        "disciplina": "Ruta",
+        "tipo": "Escalador"
+    },
+    {
+        "nombre": "George Bennett",
+        "apodo":"Nelson",
+        "nacionalidad": "Neozelandesa",
+        "equipo":"UAE Team Emirates",
+        "disciplina": "Ruta",
+        "tipo": "Escalador"
+    },
+    {
+        "nombre": "Jakob Diemer Fuglsang",
+        "apodo":"Diemer",
+        "nacionalidad": "Suiza",
+        "equipo":"Israel-Premier Tech",
+        "disciplina": "Ruta y montaña",
+        "tipo": "Todos los terrenos"
+    }
+]

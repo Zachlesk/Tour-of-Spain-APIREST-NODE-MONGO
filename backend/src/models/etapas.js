@@ -1,31 +1,35 @@
 import mongoose from "mongoose";
 
-const mySchema = mongoose.Schema(
-
-{
+const etapasSchema = mongoose.Schema({
+    etapa:{
+        type: Number,
+        require: true,
+        trim: true
+    },
     fecha: {
         type: String,
-        required: true,
+        require: true,
         trim: true
     },
-    lugar: {
+    lugar:{
         type: String,
-        required: true,
+        require: true,
         trim: true
     },
-    recorrido: {
-        type: Number,
-        required: true,
+    kilometros:{
+        type: String,
+        require: true,
         trim: true
-    }
-}, 
-
+    },
+    
+},
 {
     timestamps: true
 }
-
 );
 
-const Etapa = mongoose.model("etapas", mySchema);
+const Etapas = mongoose.model("etapas", etapasSchema);
 
-export default Etapa;
+export default Etapas;
+
+

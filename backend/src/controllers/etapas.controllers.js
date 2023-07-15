@@ -1,61 +1,54 @@
-import Etapa from "../models/etapas.js";
+import Etapas from "../models/Etapas.js";
 
-const get = async (req, res) => {
-    const dbInfo = await Etapa.find();
-    res.json(dbInfo);
-}
+const getEtapas = async (req, res)=>{
+    const etapas = await Etapas.find();
+    res.json(etapas);
+};
 
-const getOne = async (req, res) => {
-    const dbUnicoRegistro = await Etapa.find({_id:req.params.id});
-    res.json(dbUnicoRegistro);
-}
-
-const post = async (req, res) => {
-    const nuevo = new Etapa(req.body);
+const getEtapa = async (req, res)=>{
     try {
-        const nuevoRegistro = await nuevo.save();
-        res.json(nuevoRegistro);
+        const etapa = await Etapas.findOne({_id:req.params.id});
+        res.send(etapa);
     } catch (error) {
-        console.error(error);
+        res.status(404);
+        res.send({error: "Esta etapa no existe"});
     }
-}
+};
 
-const deleteOne = async (req, res) => {
+const postEtapas = async (req, res)=>{
+    const etapa = new Etapas(req.body);
     try {
-        await Etapa.deleteOne({_id: req.params.id});
-        res.json(204).send()
+        const nuevaEtapa = await etapa.save();
+        res.json(nuevaEtapa);
     } catch (error) {
-        res.status(400);
-        res.send(error.message);
+        console.log(error);
     }
-}
+};
 
-const update = async (req, res) => {
+const deleteEtapas = async (req, res)=>{
     try {
-        const actualizar = await Etapa.findOne({_id:req.params.id});
-
-        if(req.body.fecha) {
-            actualizar.fecha = req.body.fecha;
-        }
-        if (req.body.lugar) {
-            actualizar.lugar = req.body.lugar;
-        }
-        if(req.body.recorrido){
-            actualizar.recorrido = req.body.recorrido;
-        }
-
-        await actualizar.save();
-        res.send(actualizar);
+        await Etapas.deleteOne({_id:req.params.id});
+        res.status(204).send();
     } catch (error) {
-        res.status(400);
-        res.send(error.message);
+        res.status(404);
+        res.send({error: "Esta etapa no existe"});
     }
-}
+};
 
-export {
-    get,
-    getOne,
-    post,
-    update,
-    deleteOne
-}
+const putEtapas = async (req, res)=>{
+    try {
+        const etapa = await Etapa.findOneAndUpdate({_id:req.params.id},
+            {_id:req.params.id},
+            req.body,
+            {new:true});
+        await etapa.save();
+        res.json(etapa);
+        res.send(etapa);
+    } catch (error) {
+        res.status(404);
+        res.send({error: "Esta etapa no existe"});
+    }
+};
+
+
+export { getEtapas, getEtapa, postEtapas, deleteEtapas, putEtapas };
