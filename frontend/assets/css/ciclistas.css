@@ -1,7 +1,12 @@
-body {
-    background-image: url(../img/fondo.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+* {
+  border-radius: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+  .body {
+    background-color: rgb(61, 103, 187);
   }
   
   .navbar-facturartemis {
@@ -12,12 +17,13 @@ body {
     gap: 20px;
     margin-bottom: 5px;
   }
+
   .navbar-nav {
     padding: 140px;
     margin-left: 60px;
   }
   .logo {
-    width: 70px;
+    width: 180px;
   }
   
   .logo2 {
@@ -36,18 +42,6 @@ body {
     width: 600px;
   }
   
-  th {
-    font-size: 0.9rem;
-    text-align: center !important;
-    width: 1rem;
-    color: white;
-  }
-  
-  tbody {
-    font-size: 1rem;
-    text-align: center !important;
-    color: white;
-  }
   
   .categories {
     font-size: 2rem;
@@ -61,4 +55,7 @@ body {
     justify-content: center;
     align-items: end;
   
+  }
+  .card {
+    margin: 20px;
   }

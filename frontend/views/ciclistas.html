@@ -1,172 +1,350 @@
 <!DOCTYPE html>
-<html lang="en" title="Coding design">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tour de Francia</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/sideBar.css">
-    <link rel="stylesheet" href="../css/cards.css">
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title> Ciclistas </title>
+    <link rel ="stylesheet" href="../assets/css/ciclistas.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 
-<body>
-    
-    <nav class="sidebar close">
-        <header>
-            <div class="image-text">
-                <span class="image">
-                    <img src="../img/logo.png" alt="" class="logo">
-                </span>
-                <div class="text logo-text">
-                    <span class="name">Tour de Francia</span>
-                    <span class="profession">Artemis</span>
-                </div>
-            </div>
-            <i class='bx bx-chevron-right toggle'></i>
-        </header>
-        <div class="menu-bar">
-            <div class="menu">
-                <li class="search-box">
-                    <i class='bx bx-search icon'></i>
-                    <input type="text" placeholder="Search...">
-                </li>
-                <ul class="menu-links">
-                    <li class="nav-link active">
-                        <a href="index.html">
-                            <i class='bx bx-home-alt icon' ></i>
-                            <span class="text nav-text">Ciclistas</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="../equipos/equipo.html">
-                            <i class='bx bx-pie-chart-alt icon' ></i>
-                            <span class="text nav-text">Equipos</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="../etapas/etapa.html">
-                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
-                            <span class="text nav-text">Etapas</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="../premios/premio.html">
-                            <i class='bx bx-wallet icon' ></i>
-                            <span class="text nav-text">Premios</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="bottom-content">
-                <li class="">
-                    <a href="#">
-                        <i class='bx bx-log-out icon' ></i>
-                        <span class="text nav-text">Logout</span>
-                    </a>
-                </li>
-                <li class="mode">
-                    <div class="sun-moon">
-                        <i class='bx bx-moon icon moon'></i>
-                        <i class='bx bx-sun icon sun'></i>
-                    </div>
-                    <span class="mode-text text">Dark mode</span>
-                    <div class="toggle-switch">
-                        <span class="switch"></span>
-                    </div>
-                </li>
-            </div>
-        </div>
-    </nav>
 
-    <div class="btnAdd">
-    <button type="button" class="addCategory" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        <span class="addCategory__text">Add</span>
-        <span class="addCategory__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
-    </button>
+<body class="body">
+    <header id="main-header" class="main-header">
+        <section class="navbar-facturartemis">
+             <img src="../assets/img/side.png" class="logo" alt="Logo" />
+             <nav class="navbar-general">
+               <nav class="navbar bg-body-tertiary fixed-top">
+                 <div class="container-fluid">
+                  
+                   <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                   <img src="../assets/img/logo.png" width=50>
+                   </button>
+                   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                     <div class="offcanvas-header">
+                       <img src="../assets/img/logo.png" class="logo2" alt="Logo" />
+                       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                     </div>
+                     <div class="offcanvas-body">
+                       <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                         <li class="nav-item">
+                           <a class="nav-link" aria-current="page" href="./index.html"> <i class="bi bi-house-door-fill"></i> </i> Home</a>
+                         </li>
+                         <li class="nav-item">
+                           <a class="nav-link active" aria-current="page" href="./html/ciclistas.html"> <i class="bi bi-bicycle"></i>  Ciclistas</a>
+                         </li>
+                         <li class="nav-item">
+                           <a class="nav-link" href="./html/equipos.html">  <i class="bi bi-people-fill"></i> Equipos </a>
+                         </li>
+                         <li class="nav-item">
+                           <a class="nav-link" href="./html/etapas.html">  <i class="bi bi-flag-fill"></i> Etapas </a>
+                         </li>
+                         <li class="nav-item">
+                           <a class="nav-link" href="./html/premios.html">  <i class="bi bi-trophy-fill"></i> </i> Premios </a>
+                         </li>
+                       </ul>
+                       
+                     </div>
+                   </div>
+                 </div>
+               </nav>
+             </nav>
+       </section>
+       </header>
+
+ <!-- Button trigger modal -->
+ <div class="button-modal container-fluid">
+
+  <i class="plus bi bi-plus-circle fs-1 text-white" data-bs-toggle="modal"data-bs-target="#addCiclistas" type="button" ></i>
+
+  </button>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="addCiclistas"
+  tabindex="-1"
+  aria-labelledby="addCategoriasLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="addCategoriasLabel">
+          ¡Agrega un nuevo ciclista!
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form id="formCiclistas">
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-12">
+                <label
+                  for="nombre"
+                  class="form-label"
+                  title="Nombre"
+                >
+                  Nombre del ciclista:
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  placeholder="Ingrese el nombre del ciclista"
+                  name="nombre"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label
+                  for="apodo"
+                  class="form-label"
+                  title="Apodo"
+                >
+                  Apodo del ciclista:
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="apodo"
+                  placeholder="Ingrese el apodo del ciclista"
+                  name="apodo"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label
+                  for="nacionalidad"
+                  class="form-label"
+                  title="nacionalidad"
+                >
+                  Nacionalidad del ciclista:
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nacionalidad"
+                  placeholder="Ingrese la nacionalidad del ciclista"
+                  name="nacionalidad"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label
+                  for="equipo"
+                  class="form-label"
+                  title="equipo"
+                >
+                  Equipo del ciclista:
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="equipo"
+                  placeholder="Ingrese el equipo del ciclista"
+                  name="equipo"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label
+                  for="disciplina"
+                  class="form-label"
+                  title="disciplina"
+                >
+                  Disciplina de la que el ciclista es enfocado:
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="disciplina"
+                  placeholder="Ingrese la disciplina del ciclista"
+                  name="disciplina"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label
+                  for="tipo"
+                  class="form-label"
+                  title="tipo"
+                >
+                  Tipo de disciplina de la que el ciclista es enfocado:
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tipo"
+                  placeholder="Ingrese el tipo de disciplina del ciclista"
+                  name="tipo"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input
+              type="reset"
+              class="btn btn-danger text-dark"
+              data-bs-dismiss="modal"
+              value="Cerrar"
+            />
+            <input
+              type="submit"
+              class="btn btn-warning"
+              data-accion="enviar"
+              id="enviar"
+              name="enviar"
+              value="Enviar"
+            />
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
+</div>
+</div>
+</div>
 
-    <!-- Modal Insertar -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5 modaltitulo" id="exampleModalLabel">Agregar Ciclista</h1>
-            </div>
-            <div class="modal-body">
-                <form action="" class="formularios" id="formAddCiclistas">
-                    <div class="mb-3">
-                        <label for="" class="form-label">Nombre Ciclista : </label>
-                        <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre ciclista">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Equipo : </label>
-                        <input type="text" class="form-control" id="equipo" placeholder="Ingrese Equipo">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Nacionalidad : </label>
-                        <input type="text" class="form-control" id="nacionalidad" placeholder="Ingrese nacionalidad">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Edad : </label>
-                        <input type="number" class="form-control" id="edad" placeholder="Ingrese edad">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary btnForm" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="input" class="btn btn-primary btnForm">Add</button>
-                </form>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
+ <!-- Modal Update -->
+ <div class="modal fade" id="modalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+      <h1 class="modal-title fs-5 modaltitulo" id="exampleModalLabel">Editar Ciclista</h1>
+      </div>
+      <div class="modal-body">
+          <form class="formularios" id="formEditCiclista">
+            <input type="hidden" id="idEdit" name="">
+              <div class="col-12">
+                <label
+                  for="nombreEdit"
+                  class="form-label"
+                  title="NombreEdit"
+                >
+                  Nombre del ciclista:
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombreEdit"
+                  placeholder="Ingrese el nombre del ciclista"
+                  name="nombreEdit"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label
+                  for="apodoEdit"
+                  class="form-label"
+                  title="ApodoEdit"
+                >
+                  Apodo del ciclista:
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="apodoEdit"
+                  placeholder="Ingrese el apodo del ciclista"
+                  name="apodoEdit"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label
+                  for="nacionalidadEdit"
+                  class="form-label"
+                  title="nacionalidadEdit"
+                >
+                  Nacionalidad del ciclista:
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nacionalidadEdit"
+                  placeholder="Ingrese la nacionalidad del ciclista"
+                  name="nacionalidadEdit"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label
+                  for="equipoEdit"
+                  class="form-label"
+                  title="equipoEdit"
+                >
+                  Equipo del ciclista:
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="equipoEdit"
+                  placeholder="Ingrese el equipo del ciclista"
+                  name="equipoEdit"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label
+                  for="disciplinaEdit"
+                  class="form-label"
+                  title="disciplinaEdit"
+                >
+                  Disciplina de la que el ciclista es enfocado:
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="disciplinaEdit"
+                  placeholder="Ingrese la disciplina del ciclista"
+                  name="disciplinaEdit"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label
+                  for="tipoEdit"
+                  class="form-label"
+                  title="tipoEdit"
+                >
+                  Tipo de disciplina de la que el ciclista es enfocado:
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tipoEdit"
+                  placeholder="Ingrese el tipo de disciplina del ciclista"
+                  name="tipoEdit"
+                  required
+                />
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary btnForm" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="input" class="btn btn-primary btnForm">Actualizar</button>
+          </form>
+      </div>
+      </div>
+  </div>
+  </div>
+</div>
 
-    <!-- Modal Update -->
-    <div class="modal fade" id="modalUpdate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5 modaltitulo" id="exampleModalLabel">Editar Ciclista</h1>
-            </div>
-            <div class="modal-body">
-                <form action="" class="formularios" id="formEditCiclista">
-                    <input type="hidden" id="idEdit" name="">
-                    <div class="mb-3">
-                        <label for="" class="form-label">Nombre Ciclista : </label>
-                        <input type="text" class="form-control" id="nombreEdit">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Equipo : </label>
-                        <input type="text" class="form-control" id="equipoEdit">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Nacionalidad : </label>
-                        <input type="text" class="form-control" id="nacionalidadEdit">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="form-label">Edad : </label>
-                        <input type="number" class="form-control" id="edadEdit">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary btnForm" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="input" class="btn btn-primary btnForm">Actualizar</button>
-                </form>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
+        <div class="container">
+          <div class="row cardisitas">
 
-    <!-- Contenedor Cards -->
-    <main>
+          </div>
+      </div>
 
-    </main>
 
- 
+      <script src="../components/ciclistas.js" type="module"></script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
-    <script src="../js/sideBar.js"></script>
-    <script src="./ciclista.js" type="module"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
 </html>

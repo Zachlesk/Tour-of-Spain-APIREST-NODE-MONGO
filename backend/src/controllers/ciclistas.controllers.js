@@ -45,7 +45,6 @@ const putCiclistas = async (req, res)=>{
 
         await ciclista.save();
         res.json(ciclista);
-        res.send(ciclista);
     } catch (error) {
         res.status(404);
         res.send({error: "Ciclista no existe"});

@@ -11,11 +11,6 @@ const cliclistasSchema = mongoose.Schema({
         require: true,
         trim: true
     },
-    edad:{
-        type: Number,
-        require: true,
-        trim: true
-    },
     nacionalidad:{
         type: String,
         require: true,
@@ -27,12 +22,12 @@ const cliclistasSchema = mongoose.Schema({
         trim: true
     },
     disciplina:{
-        type: Number,
+        type: String,
         require: true,
         trim: true
     },
     tipo:{
-        type: Number,
+        type: String,
         require: true,
         trim: true
     }
