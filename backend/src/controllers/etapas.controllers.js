@@ -43,7 +43,6 @@ const putEtapas = async (req, res)=>{
             {new:true});
         await etapa.save();
         res.json(etapa);
-        res.send(etapa);
     } catch (error) {
         res.status(404);
         res.send({error: "Esta etapa no existe"});

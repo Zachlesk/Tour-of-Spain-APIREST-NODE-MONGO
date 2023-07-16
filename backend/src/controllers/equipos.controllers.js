@@ -45,7 +45,6 @@ const putEquipos = async (req, res)=>{
 
         await equipo.save();
         res.json(equipo);
-        res.send(equipo);
     } catch (error) {
         res.status(404);
         res.send({error: "Este equipo no existe"});

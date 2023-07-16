@@ -15,7 +15,7 @@ async function loading() {
         <div class="col-md-4">
               <div class="card">
                 <div class="card-body">
-                <h5 class="card-title d-flex justify-content-center"> 🚴‍♂ ${nombre} </h5>
+                <h5 class="card-title d-flex justify-content-center">  ✨ ${nombre} </h5>
                 <p class="card-text"> 
                 <ul style="list-style: none;>
                 <li> <p class="apodo"> <b> Apodo: </b> ${apodo}</p> </li>

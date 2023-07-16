@@ -44,7 +44,6 @@ const putPremios = async (req, res)=>{
             {new:true});
         await premios.save();
         res.json(premios);
-        res.send(premios);
     } catch (error) {
         res.status(404);
         res.send({error: "Este premio no existe"});
