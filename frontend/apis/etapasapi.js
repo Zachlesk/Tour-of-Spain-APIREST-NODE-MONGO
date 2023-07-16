@@ -7,7 +7,7 @@ const urlActualizar = "http://localhost:5000/api/etapas/update";
 export const getEtapas = async () => {
     try {
         const etapas = await fetch(url);
-        const datosEtapas = await ciclistas.json();
+        const datosEtapas = await etapas.json();
         return datosEtapas;
     } catch (error) {
         console.log(error,"Wrong");

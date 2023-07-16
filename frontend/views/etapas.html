@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Ciclistas </title>
+    <title> Etapas </title>
     <link rel ="stylesheet" href="../assets/css/ciclistas.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -56,7 +56,7 @@
  <!-- Button trigger modal -->
  <div class="button-modal container-fluid">
 
-  <i class="plus bi bi-plus-circle fs-1 text-white" data-bs-toggle="modal"data-bs-target="#addCiclistas" type="button" ></i>
+  <i class="plus bi bi-plus-circle fs-1 text-white" data-bs-toggle="modal"data-bs-target="#addEtapas" type="button" ></i>
 
   </button>
 </div>
@@ -64,7 +64,7 @@
 <!-- Modal -->
 <div
   class="modal fade"
-  id="addCiclistas"
+  id="addEtapas"
   tabindex="-1"
   aria-labelledby="addCategoriasLabel"
   aria-hidden="true"
@@ -73,7 +73,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="addCategoriasLabel">
-          ¡Agrega un nuevo ciclista!
+          ¡Agrega una nueva etapa!
         </h1>
         <button
           type="button"
@@ -83,111 +83,78 @@
         ></button>
       </div>
       <div class="modal-body">
-        <form id="formCiclistas">
+        <form id="formEtapas">
           <div class="modal-body">
             <div class="row g-3">
               <div class="col-12">
                 <label
-                  for="nombre"
+                  for="etapa"
                   class="form-label"
-                  title="Nombre"
+                  title="etapa"
                 >
-                  Nombre del ciclista:
+                  Numero de la etapa:
                 </label>
                 <input
                   type="text"
                   class="form-control"
-                  id="nombre"
-                  placeholder="Ingrese el nombre del ciclista"
-                  name="nombre"
+                  id="etapa"
+                  placeholder="Ingrese el numero de la etapa"
+                  name="etapa"
                   required
                 />
               </div>
               <div class="col-12">
                 <label
-                  for="apodo"
+                  for="fecha"
                   class="form-label"
-                  title="Apodo"
+                  title="fecha"
                 >
-                  Apodo del ciclista:
+                  Fecha de la etapa:
                 </label>
                 <input
                   type="text"
                   class="form-control"
-                  id="apodo"
-                  placeholder="Ingrese el apodo del ciclista"
-                  name="apodo"
+                  id="fecha"
+                  placeholder="Ingrese la fecha de la etapa"
+                  name="fecha"
                   required
                 />
               </div>
               <div class="col-12">
                 <label
-                  for="nacionalidad"
+                  for="lugar"
                   class="form-label"
-                  title="nacionalidad"
+                  title="lugar"
                 >
-                  Nacionalidad del ciclista:
+                  Lugar de la etapa:
                 </label>
                 <input
                   type="text"
                   class="form-control"
-                  id="nacionalidad"
-                  placeholder="Ingrese la nacionalidad del ciclista"
-                  name="nacionalidad"
+                  id="lugar"
+                  placeholder="Ingrese el lugar de la etapa"
+                  name="lugar"
                   required
                 />
               </div>
               <div class="col-12">
                 <label
-                  for="equipo"
+                  for="kilometros"
                   class="form-label"
-                  title="equipo"
+                  title="kilometros"
                 >
-                  Equipo del ciclista:
+                    Kilometros de la etapa:
                 </label>
                 <input
                   type="text"
                   class="form-control"
-                  id="equipo"
-                  placeholder="Ingrese el equipo del ciclista"
-                  name="equipo"
+                  id="kilometros"
+                  placeholder="Ingrese los kilometros de la etapa"
+                  name="kilometros"
                   required
                 />
               </div>
-              <div class="col-12">
-                <label
-                  for="disciplina"
-                  class="form-label"
-                  title="disciplina"
-                >
-                  Disciplina de la que el ciclista es enfocado:
-                </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="disciplina"
-                  placeholder="Ingrese la disciplina del ciclista"
-                  name="disciplina"
-                  required
-                />
-              </div>
-              <div class="col-12">
-                <label
-                  for="tipo"
-                  class="form-label"
-                  title="tipo"
-                >
-                  Tipo de disciplina de la que el ciclista es enfocado:
-                </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="tipo"
-                  placeholder="Ingrese el tipo de disciplina del ciclista"
-                  name="tipo"
-                  required
-                />
-              </div>
+            
             </div>
           </div>
           <div class="modal-footer">
@@ -219,110 +186,76 @@
   <div class="modal-dialog">
   <div class="modal-content">
       <div class="modal-header">
-      <h1 class="modal-title fs-5 modaltitulo" id="exampleModalLabel">Editar Ciclista</h1>
+      <h1 class="modal-title fs-5 modaltitulo" id="exampleModalLabel">Editar Etapas</h1>
       </div>
       <div class="modal-body">
-          <form class="formularios" id="formEditCiclista">
+          <form class="formularios" id="formEditEtapa">
             <input type="hidden" id="idEdit" name="">
-              <div class="col-12">
+            <div class="col-12">
                 <label
-                  for="nombreEdit"
+                  for="etapa"
                   class="form-label"
-                  title="NombreEdit"
+                  title="etapa"
                 >
-                  Nombre del ciclista:
+                  Numero de la etapa:
                 </label>
                 <input
                   type="text"
                   class="form-control"
-                  id="nombreEdit"
-                  placeholder="Ingrese el nombre del ciclista"
-                  name="nombreEdit"
+                  id="etapa"
+                  placeholder="Ingrese el numero de la etapa"
+                  name="etapa"
                   required
                 />
               </div>
               <div class="col-12">
                 <label
-                  for="apodoEdit"
+                  for="fecha"
                   class="form-label"
-                  title="ApodoEdit"
+                  title="fecha"
                 >
-                  Apodo del ciclista:
+                  Fecha de la etapa:
                 </label>
                 <input
                   type="text"
                   class="form-control"
-                  id="apodoEdit"
-                  placeholder="Ingrese el apodo del ciclista"
-                  name="apodoEdit"
+                  id="fecha"
+                  placeholder="Ingrese la fecha de la etapa"
+                  name="fecha"
                   required
                 />
               </div>
               <div class="col-12">
                 <label
-                  for="nacionalidadEdit"
+                  for="lugar"
                   class="form-label"
-                  title="nacionalidadEdit"
+                  title="lugar"
                 >
-                  Nacionalidad del ciclista:
+                  Lugar de la etapa:
                 </label>
                 <input
                   type="text"
                   class="form-control"
-                  id="nacionalidadEdit"
-                  placeholder="Ingrese la nacionalidad del ciclista"
-                  name="nacionalidadEdit"
+                  id="lugar"
+                  placeholder="Ingrese el lugar de la etapa"
+                  name="lugar"
                   required
                 />
               </div>
               <div class="col-12">
                 <label
-                  for="equipoEdit"
+                  for="kilometros"
                   class="form-label"
-                  title="equipoEdit"
+                  title="kilometros"
                 >
-                  Equipo del ciclista:
+                    Kilometros de la etapa:
                 </label>
                 <input
                   type="text"
                   class="form-control"
-                  id="equipoEdit"
-                  placeholder="Ingrese el equipo del ciclista"
-                  name="equipoEdit"
-                  required
-                />
-              </div>
-              <div class="col-12">
-                <label
-                  for="disciplinaEdit"
-                  class="form-label"
-                  title="disciplinaEdit"
-                >
-                  Disciplina de la que el ciclista es enfocado:
-                </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="disciplinaEdit"
-                  placeholder="Ingrese la disciplina del ciclista"
-                  name="disciplinaEdit"
-                  required
-                />
-              </div>
-              <div class="col-12">
-                <label
-                  for="tipoEdit"
-                  class="form-label"
-                  title="tipoEdit"
-                >
-                  Tipo de disciplina de la que el ciclista es enfocado:
-                </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="tipoEdit"
-                  placeholder="Ingrese el tipo de disciplina del ciclista"
-                  name="tipoEdit"
+                  id="kilometros"
+                  placeholder="Ingrese los kilometros de la etapa"
+                  name="kilometros"
                   required
                 />
               </div>
@@ -343,7 +276,7 @@
       </div>
 
 
-      <script src="../components/ciclistas.js" type="module"></script>
+      <script src="../components/etapas.js" type="module"></script>
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 
