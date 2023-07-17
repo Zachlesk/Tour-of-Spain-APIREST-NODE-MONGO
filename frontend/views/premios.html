@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Ciclistas </title>
-    <link rel ="stylesheet" href="../assets/css/ciclistas.css">
+    <title> Premios </title>
+    <link rel ="stylesheet" href="../assets/css/premios.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
@@ -56,7 +56,7 @@
  <!-- Button trigger modal -->
  <div class="button-modal container-fluid">
 
-  <i class="plus bi bi-plus-circle fs-1 text-white" data-bs-toggle="modal"data-bs-target="#addCiclistas" type="button" ></i>
+  <i class="plus bi bi-plus-circle fs-1 text-white" data-bs-toggle="modal"data-bs-target="#addPremios" type="button" ></i>
 
   </button>
 </div>
@@ -64,7 +64,7 @@
 <!-- Modal -->
 <div
   class="modal fade"
-  id="addCiclistas"
+  id="addPremios"
   tabindex="-1"
   aria-labelledby="addCategoriasLabel"
   aria-hidden="true"
@@ -73,7 +73,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="addCategoriasLabel">
-          ¡Agrega un nuevo ciclista!
+          ¡Agrega un nuevo premio!
         </h1>
         <button
           type="button"
@@ -83,108 +83,91 @@
         ></button>
       </div>
       <div class="modal-body">
-        <form id="formCiclistas">
+        <form id="formPremios">
           <div class="modal-body">
             <div class="row g-3">
               <div class="col-12">
                 <label
-                  for="nombre"
+                  for="clasificacion"
                   class="form-label"
-                  title="Nombre"
+                  title="clasificacion"
                 >
-                  Nombre del ciclista:
+                   Clasificación del ciclista:
                 </label>
                 <input
                   type="text"
                   class="form-control"
-                  id="nombre"
-                  placeholder="Ingrese el nombre del ciclista"
-                  name="nombre"
+                  id="clasificacion"
+                  placeholder="Ingrese la clasificación acorde al premio"
+                  name="clasificacion"
                   required
                 />
               </div>
               <div class="col-12">
                 <label
-                  for="apodo"
+                  for="descripcion"
                   class="form-label"
-                  title="Apodo"
+                  title="descripcion"
                 >
-                  Apodo del ciclista:
+                  Descripción del premio
                 </label>
                 <input
                   type="text"
                   class="form-control"
-                  id="apodo"
-                  placeholder="Ingrese el apodo del ciclista"
-                  name="apodo"
+                  id="descripcion"
+                  placeholder="Ingrese la descripcion del premio"
+                  name="descripcion"
                   required
                 />
               </div>
               <div class="col-12">
                 <label
-                  for="nacionalidad"
+                  for="primerlugar"
                   class="form-label"
-                  title="nacionalidad"
+                  title="primerlugar"
                 >
-                  Nacionalidad del ciclista:
+                  Cantidad para el primer lugar:
                 </label>
                 <input
                   type="text"
                   class="form-control"
-                  id="nacionalidad"
-                  placeholder="Ingrese la nacionalidad del ciclista"
-                  name="nacionalidad"
+                  id="primerlugar"
+                  placeholder="Ingrese la cantidad del premio al primer lugar"
+                  name="primerlugar"
                   required
                 />
               </div>
               <div class="col-12">
                 <label
-                  for="equipo"
+                  for="segundolugar"
                   class="form-label"
-                  title="equipo"
+                  title="segundolugar"
                 >
-                  Equipo del ciclista:
+                Cantidad para el segundo lugar:
                 </label>
                 <input
                   type="text"
                   class="form-control"
-                  id="equipo"
-                  placeholder="Ingrese el equipo del ciclista"
-                  name="equipo"
+                  id="segundolugar"
+                  placeholder="Ingrese la cantidad del premio al segundo lugar"
+                  name="segundolugar"
                   required
                 />
               </div>
               <div class="col-12">
                 <label
-                  for="disciplina"
+                  for="tercerlugar"
                   class="form-label"
-                  title="disciplina"
+                  title="tercerlugar"
                 >
-                  Disciplina de la que el ciclista es enfocado:
+                Cantidad para el tercer lugar:
                 </label>
                 <input
                   type="text"
                   class="form-control"
-                  id="disciplina"
-                  placeholder="Ingrese la disciplina del ciclista"
-                  name="disciplina"
-                  required
-                />
-              </div>
-              <div class="col-12">
-                <label
-                  for="tipo"
-                  class="form-label"
-                  title="tipo"
-                >
-                  Tipo de disciplina de la que el ciclista es enfocado:
-                </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="tipo"
-                  placeholder="Ingrese el tipo de disciplina del ciclista"
-                  name="tipo"
+                  id="tercerlugar"
+                  placeholder="Ingrese la cantidad del premio al tercer lugar"
+                  name="tercerlugar"
                   required
                 />
               </div>
@@ -219,113 +202,97 @@
   <div class="modal-dialog">
   <div class="modal-content">
       <div class="modal-header">
-      <h1 class="modal-title fs-5 modaltitulo" id="exampleModalLabel">Editar Ciclista</h1>
+      <h1 class="modal-title fs-5 modaltitulo" id="exampleModalLabel">Editar Premio</h1>
       </div>
       <div class="modal-body">
-          <form class="formularios" id="formEditCiclista">
+          <form class="formularios" id="formEditPremio">
             <input type="hidden" id="idEdit" name="">
               <div class="col-12">
-                <label
-                  for="nombreEdit"
-                  class="form-label"
-                  title="NombreEdit"
-                >
-                  Nombre del ciclista:
-                </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nombreEdit"
-                  placeholder="Ingrese el nombre del ciclista"
-                  name="nombreEdit"
-                  required
-                />
-              </div>
-              <div class="col-12">
-                <label
-                  for="apodoEdit"
-                  class="form-label"
-                  title="ApodoEdit"
-                >
-                  Apodo del ciclista:
-                </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="apodoEdit"
-                  placeholder="Ingrese el apodo del ciclista"
-                  name="apodoEdit"
-                  required
-                />
-              </div>
-              <div class="col-12">
-                <label
-                  for="nacionalidadEdit"
-                  class="form-label"
-                  title="nacionalidadEdit"
-                >
-                  Nacionalidad del ciclista:
-                </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nacionalidadEdit"
-                  placeholder="Ingrese la nacionalidad del ciclista"
-                  name="nacionalidadEdit"
-                  required
-                />
-              </div>
-              <div class="col-12">
-                <label
-                  for="equipoEdit"
-                  class="form-label"
-                  title="equipoEdit"
-                >
-                  Equipo del ciclista:
-                </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="equipoEdit"
-                  placeholder="Ingrese el equipo del ciclista"
-                  name="equipoEdit"
-                  required
-                />
-              </div>
-              <div class="col-12">
-                <label
-                  for="disciplinaEdit"
-                  class="form-label"
-                  title="disciplinaEdit"
-                >
-                  Disciplina de la que el ciclista es enfocado:
-                </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="disciplinaEdit"
-                  placeholder="Ingrese la disciplina del ciclista"
-                  name="disciplinaEdit"
-                  required
-                />
-              </div>
-              <div class="col-12">
-                <label
-                  for="tipoEdit"
-                  class="form-label"
-                  title="tipoEdit"
-                >
-                  Tipo de disciplina de la que el ciclista es enfocado:
-                </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="tipoEdit"
-                  placeholder="Ingrese el tipo de disciplina del ciclista"
-                  name="tipoEdit"
-                  required
-                />
-              </div>
+                <div class="col-12">
+                  <label
+                    for="clasificacionEdit"
+                    class="form-label"
+                    title="clasificacionEdit"
+                  >
+                     Clasificación del ciclista:
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="clasificacionEdit"
+                    placeholder="Ingrese la clasificación acorde al premio"
+                    name="clasificacionEdit"
+                    required
+                  />
+                </div>
+                <div class="col-12">
+                  <label
+                    for="descripcionEdit"
+                    class="form-label"
+                    title="descripcionEdit"
+                  >
+                    Descripción del premio
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="descripcionEdit"
+                    placeholder="Ingrese la descripcion del premio"
+                    name="descripcionEdit"
+                    required
+                  />
+                </div>
+                <div class="col-12">
+                  <label
+                    for="primerlugarEdit"
+                    class="form-label"
+                    title="primerlugarEdit"
+                  >
+                    Cantidad para el primer lugar:
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="primerlugarEdit"
+                    placeholder="Ingrese la cantidad del premio al primer lugar"
+                    name="primerlugarEdit"
+                    required
+                  />
+                </div>
+                <div class="col-12">
+                  <label
+                    for="segundolugarEdit"
+                    class="form-label"
+                    title="segundolugarEdit"
+                  >
+                  Cantidad para el segundo lugar:
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="segundolugarEdit"
+                    placeholder="Ingrese la cantidad del premio al segundo lugar"
+                    name="segundolugarEdit"
+                    required
+                  />
+                </div>
+                <div class="col-12">
+                  <label
+                    for="tercerlugarEdit"
+                    class="form-label"
+                    title="tercerlugarEdit"
+                  >
+                  Cantidad para el tercer lugar:
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="tercerlugarEdit"
+                    placeholder="Ingrese la cantidad del premio al tercer lugar"
+                    name="tercerlugarEdit"
+                    required
+                  />
+                </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-secondary btnForm" data-bs-dismiss="modal">Cerrar</button>
                   <button type="input" class="btn btn-primary btnForm">Actualizar</button>
@@ -343,7 +310,7 @@
       </div>
 
 
-      <script src="../components/ciclistas.js" type="module"></script>
+      <script src="../components/premios.js" type="module"></script>
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 

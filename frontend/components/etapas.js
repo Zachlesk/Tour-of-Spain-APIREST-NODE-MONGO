@@ -92,7 +92,7 @@ infoCategoria.addEventListener("click",getInfo);
 async function getInfo(e){
     if (e.target.classList.contains("actualizar")) {
         const id = e.target.getAttribute("id");
-        const informacion = await getCiclista(id);
+        const informacion = await getEtapa(id);
 
         const {_id, etapa , fecha, lugar, kilometros } = informacion;
 

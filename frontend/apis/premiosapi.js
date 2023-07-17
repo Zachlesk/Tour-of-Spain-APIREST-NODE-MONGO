@@ -7,7 +7,7 @@ const urlActualizar = "http://localhost:5000/api/premios/update";
 export const getPremios = async () => {
     try {
         const premios = await fetch(url);
-        const datosPremios = await ciclistas.json();
+        const datosPremios = await premios.json();
         return datosPremios;
     } catch (error) {
         console.log(error,"Wrong");

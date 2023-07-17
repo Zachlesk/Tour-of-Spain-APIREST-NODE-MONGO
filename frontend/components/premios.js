@@ -1,4 +1,4 @@
-import { getCiclistas, getCiclista, postCiclistas, deleteCiclistas, putCiclistas } from "../apis/ciclistasapi.js";
+import { getPremios, getPremio, postPremios, deletePremios, putPremios} from "../apis/premiosapi.js";
 
 document.addEventListener("DOMContentLoaded", ()=>{
     loading();
@@ -7,22 +7,21 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     //Load
 async function loading() {
-    const ciclistas = await getCiclistas();
+    const premios = await getPremios();
     const contenedor = document.querySelector(".cardisitas");
-    ciclistas.forEach((element) => {
-        const {_id, nombre, apodo, nacionalidad, equipo, disciplina, tipo} = element;
+    premios.forEach((element) => {
+        const {_id, clasificacion, descripcion, primerlugar, segundolugar, tercerlugar} = element;
         contenedor.innerHTML+=`
         <div class="col-md-4">
               <div class="card">
                 <div class="card-body">
-                <h5 class="card-title d-flex justify-content-center">  ✨ ${nombre} </h5>
+                <h5 class="card-title d-flex justify-content-center">  ✨ ${clasificacion} </h5>
                 <p class="card-text"> 
                 <ul style="list-style: none;>
-                <li> <p class="apodo"> <b> Apodo: </b> ${apodo}</p> </li>
-                 <li><p class="nacionalidad"> <b> Nacionalidad: </b> ${nacionalidad}</p></p> </li>
-                 <li><p class="equipo"> <b> Equipo: </b> ${equipo}  </p> </li>
-                 <li><p class="disciplina"> <b> Disciplina: </b> ${disciplina}</p> </li>
-                 <li><p class="tipo"> <b> Tipo: </b> ${tipo}</p> </li>
+                <li> <p class="apodo"> <b> Descripción: </b> ${descripcion}</p> </li>
+                 <li><p class="nacionalidad"> <b> Nacionalidad: </b> ${primerlugar}</p></p> </li>
+                 <li><p class="equipo"> <b> Equipo: </b> ${segundolugar}  </p> </li>
+                 <li><p class="disciplina"> <b> Disciplina: </b> ${tercerlugar}</p> </li>
                 <div class="detalles">
                 <button class="btn btn-warning edit-button actualizar" id="${_id}" data-bs-toggle="modal" data-bs-target="#modalUpdate">
                 <i class="bi bi-pencil-square"></i>
@@ -40,33 +39,32 @@ async function loading() {
 
 
  //Insert
-const formulario = document.querySelector("#formCiclistas");
-formulario.addEventListener("submit", insertCiclistas);
+const formulario = document.querySelector("#formPremios");
+formulario.addEventListener("submit", insertPremios);
 
-function insertCiclistas(e) {
+function insertPremios(e) {
   e.preventDefault();
-  const nombre = document.querySelector("#nombre").value;
-  const apodo = document.querySelector("#apodo").value;
-  const nacionalidad = document.querySelector("#nacionalidad").value;
-  const equipo = document.querySelector("#equipo").value;
-  const disciplina = document.querySelector("#disciplina").value;
-  const tipo = document.querySelector("#tipo").value; 
+  const clasificacion = document.querySelector("#clasificacion").value;
+  const descripcion = document.querySelector("#descripcion").value;
+  const primerlugar = document.querySelector("#primerlugar").value;
+  const segundolugar = document.querySelector("#segundolugar").value;
+  const tercerlugar = document.querySelector("#tercerlugar").value;
+
 
   const registro = {
-    nombre,
-    apodo,
-    nacionalidad,
-    equipo,
-    disciplina,
-    tipo
+    clasificacion,
+    descripcion,
+    primerlugar,
+    segundolugar,
+    tercerlugar
   };
 
 
   if (validacion(registro)) {
     alert("¡Ingresa todos los datos!");
   } else {
-    alert("Los datos del ciclista han sido guardados exitosamente.");
-    return postCiclistas(registro);
+    alert("Los datos de los premios han sido guardados exitosamente.");
+    return postPremios(registro);
 }
 };
 
@@ -77,15 +75,15 @@ function validacion(object) {
 
 //Delete
 const eliminar = document.querySelector(".cardisitas");
-eliminar.addEventListener("click",borrarCiclista);
+eliminar.addEventListener("click",borrarPremios);
 
-function borrarCiclista(e){
+function borrarPremios(e){
     if (e.target.classList.contains("eliminar")) {
         console.log(e.target);
-        const idCiclista = e.target.getAttribute("id");
-        const confir = confirm("¿Quieres eliminar este ciclista?");
+        const idPremios = e.target.getAttribute("id");
+        const confir = confirm("¿Quieres eliminar este premio?");
         if (confir) {
-            deleteCiclistas(idCiclista);
+            deletePremios(idPremios);
         }
     }
 }
@@ -98,53 +96,49 @@ infoCategoria.addEventListener("click",getInfo);
 async function getInfo(e){
     if (e.target.classList.contains("actualizar")) {
         const id = e.target.getAttribute("id");
-        const informacion = await getCiclista(id);
+        const informacion = await getPremio(id);
 
-        const {_id, nombre,apodo, equipo,nacionalidad, disciplina, tipo} = informacion;
+        const {_id, clasificacion, descripcion, primerlugar , segundolugar, tercerlugar} = informacion;
 
-        const nombreEdit = document.querySelector('#nombreEdit');
-        const apodoEdit = document.querySelector('#apodoEdit');
-        const equipoEdit = document.querySelector('#equipoEdit');
-        const nacionalidadEdit = document.querySelector('#nacionalidadEdit');
-        const disciplinaEdit = document.querySelector('#disciplinaEdit');
-        const tipoEdit = document.querySelector('#tipoEdit');
+        const clasificacionEdit = document.querySelector('#clasificacionEdit');
+        const descripcionEdit = document.querySelector('#descripcionEdit');
+        const primerlugarEdit = document.querySelector('#primerlugarEdit');
+        const segundolugarEdit = document.querySelector('#segundolugarEdit');
+        const tercerlugarEdit = document.querySelector('#tercerlugarEdit');
         const idEdit = document.querySelector('#idEdit');
 
-        nombreEdit.value = nombre;
-        apodoEdit.value = apodo;
-        equipoEdit.value = equipo;
-        nacionalidadEdit.value = nacionalidad;
-        disciplinaEdit.value = disciplina;
-        tipoEdit.value = tipo;
+        clasificacionEdit.value = clasificacion;
+        descripcionEdit.value = descripcion;
+        primerlugarEdit.value = primerlugar;
+        segundolugarEdit.value = segundolugar;
+        tercerlugarEdit.value = tercerlugar;
         idEdit.value = _id; 
     }
 };
 
 
 //Update
-const editar = document.querySelector("#formEditCiclista");
-editar.addEventListener('submit', actualizar)
+const editar = document.querySelector("#formEditPremio");
+editar.addEventListener('submit', actualizarPremio)
 
-function actualizar(e){
+function actualizarPremio(e){
     e.preventDefault();
     const id = document.querySelector('#idEdit').value;
-    const nombre = document.querySelector('#nombreEdit').value;
-    const apodo = document.querySelector('#apodoEdit').value;
-    const equipo = document.querySelector('#equipoEdit').value;
-    const nacionalidad = document.querySelector('#nacionalidadEdit').value;
-    const disciplina = document.querySelector('#disciplinaEdit').value;
-    const tipo = document.querySelector('#tipoEdit').value;
+    const clasificacion = document.querySelector('#clasificacionEdit').value;
+    const descripcion = document.querySelector('#descripcionEdit').value;
+    const primerlugar = document.querySelector('#primerlugar').value;
+    const segundolugar = document.querySelector('#segundolugarEdit').value;
+    const tercerlugar = document.querySelector('#tercerlugarEdit').value;
 
     const datos ={
-        nombre,
-        apodo,
-        equipo,
-        nacionalidad,
-        disciplina,
-        tipo
+        clasificacion,
+        descripcion,
+        primerlugar,
+        segundolugar,
+        tercerlugar
     }
 
     alert('Datos editados correctamente');
 
-    return putCiclistas(datos,id);
+    return putPremios(datos,id);
 }; 
