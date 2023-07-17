@@ -44,7 +44,6 @@
                            <a class="nav-link" href="./premios.html">  <i class="bi bi-trophy-fill"></i> </i> Premios </a>
                          </li>
                        </ul>
-                       
                      </div>
                    </div>
                  </div>
@@ -55,9 +54,7 @@
 
  <!-- Button trigger modal -->
  <div class="button-modal container-fluid">
-
-  <i class="plus bi bi-plus-circle fs-1 text-white" data-bs-toggle="modal"data-bs-target="#addCiclistas" type="button" ></i>
-
+    <i class="plus bi bi-plus-circle fs-1 text-white" data-bs-toggle="modal"data-bs-target="#addCiclistas" type="button" ></i>
   </button>
 </div>
 
@@ -77,124 +74,46 @@
           <div class="modal-body">
             <div class="row g-3">
               <div class="col-12">
-                <label
-                  for="nombre"
-                  class="form-label"
-                  title="Nombre"
-                >
+                <label for="nombre" class="form-label" title="Nombre">
                   Nombre del ciclista:
                 </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nombre"
-                  placeholder="Ingrese el nombre del ciclista"
-                  name="nombre"
-                  required
-                />
+                <input type="text" class="form-control"  id="nombre" placeholder="Ingrese el nombre del ciclista" name="nombre" required/>
               </div>
               <div class="col-12">
-                <label
-                  for="apodo"
-                  class="form-label"
-                  title="Apodo"
-                >
+                <label for="apodo" class="form-label" title="Apodo">
                   Apodo del ciclista:
                 </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="apodo"
-                  placeholder="Ingrese el apodo del ciclista"
-                  name="apodo"
-                  required
-                />
+                <input type="text" class="form-control" id="apodo" placeholder="Ingrese el apodo del ciclista" name="apodo" required/>
               </div>
               <div class="col-12">
-                <label
-                  for="nacionalidad"
-                  class="form-label"
-                  title="nacionalidad"
-                >
+                <label for="nacionalidad" class="form-label" title="nacionalidad">
                   Nacionalidad del ciclista:
                 </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nacionalidad"
-                  placeholder="Ingrese la nacionalidad del ciclista"
-                  name="nacionalidad"
-                  required
-                />
+                <input type="text" class="form-control" id="nacionalidad" placeholder="Ingrese la nacionalidad del ciclista" name="nacionalidad" required/>
               </div>
               <div class="col-12">
-                <label
-                  for="equipo"
-                  class="form-label"
-                  title="equipo"
-                >
+                <label for="equipo" class="form-label" title="equipo">
                   Equipo del ciclista:
                 </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="equipo"
-                  placeholder="Ingrese el equipo del ciclista"
-                  name="equipo"
-                  required
-                />
+                <input type="text" class="form-control" id="equipo" placeholder="Ingrese el equipo del ciclista" name="equipo"  required/>
               </div>
               <div class="col-12">
-                <label
-                  for="disciplina"
-                  class="form-label"
-                  title="disciplina"
-                >
+                <label for="disciplina" class="form-label" title="disciplina">
                   Disciplina de la que el ciclista es enfocado:
                 </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="disciplina"
-                  placeholder="Ingrese la disciplina del ciclista"
-                  name="disciplina"
-                  required
-                />
+                <input type="text" class="form-control" id="disciplina" placeholder="Ingrese la disciplina del ciclista" name="disciplina" required/>
               </div>
               <div class="col-12">
-                <label
-                  for="tipo"
-                  class="form-label"
-                  title="tipo"
-                >
+                <label for="tipo" class="form-label" title="tipo">
                   Tipo de disciplina de la que el ciclista es enfocado:
                 </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="tipo"
-                  placeholder="Ingrese el tipo de disciplina del ciclista"
-                  name="tipo"
-                  required
-                />
+                <input type="text" class="form-control" id="tipo" placeholder="Ingrese el tipo de disciplina del ciclista" name="tipo" required/>
               </div>
             </div>
           </div>
           <div class="modal-footer">
-            <input
-              type="reset"
-              class="btn btn-danger text-dark"
-              data-bs-dismiss="modal"
-              value="Cerrar"
-            />
-            <input
-              type="submit"
-              class="btn btn-warning"
-              data-accion="enviar"
-              id="enviar"
-              name="enviar"
-              value="Enviar"
-            />
+            <input type="reset" class="btn btn-danger text-dark" data-bs-dismiss="modal" value="Cerrar"/>
+            <input type="submit" class="btn btn-warning" data-accion="enviar" id="enviar" name="enviar" value="Enviar"/>
           </div>
         </form>
       </div>
@@ -215,106 +134,40 @@
           <form class="formularios" id="formEditCiclista">
             <input type="hidden" id="idEdit" name="">
               <div class="col-12">
-                <label
-                  for="nombreEdit"
-                  class="form-label"
-                  title="NombreEdit"
-                >
+                <label for="nombreEdit" class="form-label" title="NombreEdit">
                   Nombre del ciclista:
                 </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nombreEdit"
-                  placeholder="Ingrese el nombre del ciclista"
-                  name="nombreEdit"
-                  required
-                />
+                <input type="text" class="form-control" id="nombreEdit" placeholder="Ingrese el nombre del ciclista" name="nombreEdit" required/>
               </div>
               <div class="col-12">
-                <label
-                  for="apodoEdit"
-                  class="form-label"
-                  title="ApodoEdit"
-                >
+                <label for="apodoEdit" class="form-label" title="ApodoEdit">
                   Apodo del ciclista:
                 </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="apodoEdit"
-                  placeholder="Ingrese el apodo del ciclista"
-                  name="apodoEdit"
-                  required
-                />
+                <input type="text" class="form-control" id="apodoEdit" placeholder="Ingrese el apodo del ciclista" name="apodoEdit" required/>
               </div>
               <div class="col-12">
-                <label
-                  for="nacionalidadEdit"
-                  class="form-label"
-                  title="nacionalidadEdit"
-                >
+                <label for="nacionalidadEdit" class="form-label" title="nacionalidadEdit">
                   Nacionalidad del ciclista:
                 </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nacionalidadEdit"
-                  placeholder="Ingrese la nacionalidad del ciclista"
-                  name="nacionalidadEdit"
-                  required
-                />
+                <input type="text" class="form-control" id="nacionalidadEdit" placeholder="Ingrese la nacionalidad del ciclista" name="nacionalidadEdit" required/>
               </div>
               <div class="col-12">
-                <label
-                  for="equipoEdit"
-                  class="form-label"
-                  title="equipoEdit"
-                >
+                <label for="equipoEdit" class="form-label" title="equipoEdit">
                   Equipo del ciclista:
                 </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="equipoEdit"
-                  placeholder="Ingrese el equipo del ciclista"
-                  name="equipoEdit"
-                  required
-                />
+                <input type="text" class="form-control" id="equipoEdit" placeholder="Ingrese el equipo del ciclista" name="equipoEdit" required/>
               </div>
               <div class="col-12">
-                <label
-                  for="disciplinaEdit"
-                  class="form-label"
-                  title="disciplinaEdit"
-                >
+                <label for="disciplinaEdit" class="form-label" title="disciplinaEdit">
                   Disciplina de la que el ciclista es enfocado:
                 </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="disciplinaEdit"
-                  placeholder="Ingrese la disciplina del ciclista"
-                  name="disciplinaEdit"
-                  required
-                />
+                <input type="text" class="form-control" id="disciplinaEdit" placeholder="Ingrese la disciplina del ciclista" name="disciplinaEdit" required/>
               </div>
               <div class="col-12">
-                <label
-                  for="tipoEdit"
-                  class="form-label"
-                  title="tipoEdit"
-                >
+                <label for="tipoEdit" class="form-label" title="tipoEdit">
                   Tipo de disciplina de la que el ciclista es enfocado:
                 </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="tipoEdit"
-                  placeholder="Ingrese el tipo de disciplina del ciclista"
-                  name="tipoEdit"
-                  required
-                />
+                <input type="text" class="form-control" id="tipoEdit" placeholder="Ingrese el tipo de disciplina del ciclista" name="tipoEdit" required />
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-secondary btnForm" data-bs-dismiss="modal">Cerrar</button>
@@ -332,9 +185,7 @@
           </div>
       </div>
 
-
       <script src="../components/ciclistas.js" type="module"></script>
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
-
 </html>
